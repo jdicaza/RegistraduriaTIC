@@ -11,7 +11,8 @@ class ModeloCandidato(db.Model):
     numlista = db.Column(db.Integer)
     idpartido = db.Column(db.Integer, db.ForeignKey(ModeloPartido.idpartido))
 
-    def __init__(self, cedula, nombre, apellido, numlista, idpartido):
+    def __init__(self, idcandidato, cedula, nombre, apellido, numlista, idpartido):
+        self.idcandidato = idcandidato
         self.cedula = cedula
         self.nombre = nombre
         self.apellido = apellido

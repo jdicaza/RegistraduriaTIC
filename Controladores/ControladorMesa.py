@@ -45,7 +45,6 @@ class ControladorMesa():
         try:
             print("Actualizando número de Mesa: ", id)
             mesaupdate = ModeloMesa.query.get(id)
-            mesaupdate.idmesa = elMesa.get('idmesa')
             mesaupdate.cant_inscritos = elMesa.get('cant_inscritos')
             db.session.add(mesaupdate)
             db.session.commit()
