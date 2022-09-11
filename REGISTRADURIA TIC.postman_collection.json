@@ -1,0 +1,663 @@
+{
+	"info": {
+		"_postman_id": "8dc4a3b3-678a-478b-bbb3-54ce3b1315da",
+		"name": "REGISTRADURIA TIC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21997303"
+	},
+	"item": [
+		{
+			"name": "Partidos",
+			"item": [
+				{
+					"name": "postPartido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\" : \"Pacto Historico\",\n    \"lema\" : \"Colombia puede\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/partido",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"partido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allPartidos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/partidos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"partidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "idPartido",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/partido/2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"partido",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putPartido",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\" : \"Pacto Historico\",\n    \"lema\" : \"Colombia Puede\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/partido/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"partido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePartido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/partido/3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"partido",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mesas",
+			"item": [
+				{
+					"name": "postMesa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idmesa\" : 258,\n    \"cant_inscritos\" : 800\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/mesa",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"mesa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allMesas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/mesas",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"mesas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "idMesa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/mesa/18",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"mesa",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putMesa",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cant_inscritos\" : 2003\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/mesa/258",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"mesa",
+								"258"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMesa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/mesa/259",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"mesa",
+								"259"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidatos",
+			"item": [
+				{
+					"name": "postCandidato",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cedula\" : \"8889\",\n    \"nombre\" : \"Carlos\",\n    \"apellido\" : \"Perez\",\n    \"numlista\" : 5,\n    \"idpartido\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/candidato",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"candidato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allCandidatos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/candidatos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"candidatos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "idCandidato",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/candidato/2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"candidato",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putCandidato",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cedula\" : \"889\",\n    \"nombre\" : \"Pepe\",\n    \"apellido\" : \"Perez\",\n    \"numlista\" : 6,\n    \"idpartido\" : 1\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/candidato/4",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"candidato",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCandidato",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/candidato/2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"candidato",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resultados",
+			"item": [
+				{
+					"name": "postResultado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idmesa\" : 1,\n    \"idcandidato\" : 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/resultado",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"resultado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allResultados",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/resultados",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"resultados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "idResultado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/resultado/12",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"resultado",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putResultado",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idmesa\" : 1,\n    \"idcandidato\" : 2\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:9999/resultado/4",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9999",
+							"path": [
+								"resultado",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
