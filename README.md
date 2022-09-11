@@ -17,7 +17,6 @@ Las siguienets son las tecnologías utilizadas durante el desarrollo:
 - Flask 2.2.2
 - SQLAlchemy 1.4
 - Waitress 2.1.2
-- Pos
 
 Colaboradores:
 
