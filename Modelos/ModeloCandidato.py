@@ -4,15 +4,14 @@ from .ModeloPartido import ModeloPartido
 
 class ModeloCandidato(db.Model):
     __tablename__ = "Candidato"
-    idcandidato = db.Column(db.Integer, primary_key=True)
+    idcandidato = db.Column(db.Integer, primary_key=True, autoincrement=True)
     cedula = db.Column(db.String(), unique=True)
     nombre = db.Column(db.String())
     apellido = db.Column(db.String())
     numlista = db.Column(db.Integer)
     idpartido = db.Column(db.Integer, db.ForeignKey(ModeloPartido.idpartido))
 
-    def __init__(self, idcandidato, cedula, nombre, apellido, numlista, idpartido):
-        self.idcandidato = idcandidato
+    def __init__(self, cedula, nombre, apellido, numlista, idpartido):
         self.cedula = cedula
         self.nombre = nombre
         self.apellido = apellido
@@ -21,6 +20,7 @@ class ModeloCandidato(db.Model):
 
     def resultado(self):
         return {
+            "idcandidato": self.idcandidato,
             "cedula": self.cedula,
             "nombre": self.nombre,
             "apellido": self.apellido,
@@ -30,5 +30,5 @@ class ModeloCandidato(db.Model):
 
 
     def __repr__(self):
-        return f" cedula : {self.cedula}, nombre : {self.nombre}," \
+        return f"cedula : {self.cedula}, nombre : {self.nombre}," \
                f"apellido : {self.apellido}, numlista : {self.numlista}, idpartido : {self.idpartido}"

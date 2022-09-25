@@ -19,19 +19,33 @@ def crearResultado():
 
 
 @resultado.route("/resultado/<string:id>",methods=['GET'])
-def getCandidato(id):
+def getResultado(id):
     json=miControladorResultado.show(id)
     return jsonify(json)
 
 
 @resultado.route("/resultado/<string:id>",methods=['PUT'])
-def modificarCandidato(id):
+def modificarResultado(id):
     data = request.get_json()
     json=miControladorResultado.update(id,data)
     return jsonify(json)
 
+@resultado.route("/reportes",methods=['GET'])
+def totalVotos():
+    json = miControladorResultado.cantidadTotalVotos()
+    return jsonify(json)
 
-'''@resultado.route("/resultadoid/<string:id>",methods=['GET'])
-def cantidad_votos(id):
-    json=miControladorResultado.votos_id(id)
-    return jsonify(json)'''
+@resultado.route("/reportes/<string:id>",methods=['GET'])
+def totalVotosCandidato(id):
+    json = miControladorResultado.cantidadVotosCandidato(id)
+    return jsonify(json)
+
+@resultado.route("/reportes/candidatos", methods=['GET'])
+def totalVotosCandidatos():
+    json = miControladorResultado.cantidadVotosCandidatos()
+    return jsonify(json)
+
+@resultado.route("/reportes/ganador", methods=['GET'])
+def totalVotosGanador():
+    json = miControladorResultado.candidatoGanador()
+    return jsonify(json)

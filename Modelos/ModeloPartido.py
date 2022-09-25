@@ -6,15 +6,17 @@ class ModeloPartido(db.Model):
     nombre = db.Column(db.String())
     lema = db.Column(db.String())
 
-    def __init__(self, nombre, lema):
+    def __init__(self, idpartido, nombre, lema):
+        self.idpartido = idpartido
         self.nombre = nombre
         self.lema = lema
 
     def resultado(self):
         return {
+            "idpartido": self.idpartido,
             "nombre": self.nombre,
             "lema": self.lema
         }
 
     def __repr__(self):
-        return f" nombre : {self.nombre} , lema : {self.lema} "
+        return f" idpartido : {self.idpartido}, nombre : {self.nombre} , lema : {self.lema} "
