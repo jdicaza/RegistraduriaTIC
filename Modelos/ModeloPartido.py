@@ -6,8 +6,7 @@ class ModeloPartido(db.Model):
     nombre = db.Column(db.String())
     lema = db.Column(db.String())
 
-    def __init__(self, idpartido, nombre, lema):
-        self.idpartido = idpartido
+    def __init__(self, nombre, lema):
         self.nombre = nombre
         self.lema = lema
 

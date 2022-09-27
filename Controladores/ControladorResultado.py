@@ -3,7 +3,6 @@ from Modelos.ModeloResultado import ModeloResultado
 from Modelos.ModeloCandidato import ModeloCandidato
 from Modelos.ModeloPartido import ModeloPartido
 from Modelos.ModeloMesa import ModeloMesa
-from sqlalchemy import func
 
 
 class ControladorResultado():
@@ -76,6 +75,7 @@ class ControladorResultado():
         totalvotoscandidatos = []
         candidatos = []
         resultado = db.session.query(ModeloCandidato).all()
+        totalvotos = db.session.query(ModeloResultado).count()
 
         for candidato in resultado:
             candidatos.append(candidato.idcandidato)
@@ -83,19 +83,19 @@ class ControladorResultado():
         for i in candidatos:
             nombrecandidatos = db.session.query(ModeloCandidato).get(i).nombre
             apellidocandidatos = db.session.query(ModeloCandidato).get(i).apellido
-            partidocandidatos = db.session.query(ModeloCandidato).get(i).idpartido
             votoscandidatos = db.session.query(ModeloResultado).filter_by(idcandidato=i).count()
+            porcentajevotos = round(((votoscandidatos * 100) / totalvotos), 2)
             partidocandidatos = db.session.query(ModeloCandidato).get(i).idpartido
             nombrepartidos = db.session.query(ModeloPartido).get(partidocandidatos).nombre
 
             totalvotoscandidatos.append({'Candidato': nombrecandidatos + ' ' + apellidocandidatos,
                 'Partido Político': nombrepartidos,
-                'Cantidad de votos': votoscandidatos
+                'Cantidad de votos': votoscandidatos,
+                'Porcentaje(%) de votación': porcentajevotos
                 })
         return totalvotoscandidatos
 
     def candidatoGanador(self):
-        totalvotoscandidatos = []
         candidatos = []
         ganadorcandidato = []
         resultado = db.session.query(ModeloCandidato).all()
@@ -106,7 +106,6 @@ class ControladorResultado():
         for i in candidatos:
             ganadorcandidato.append(db.session.query(ModeloResultado).filter_by(idcandidato=i).count())
             votos_max = max(ganadorcandidato)
-            votoscandidatos = db.session.query(ModeloResultado).filter_by(idcandidato=i).count()
 
         for i in candidatos:
             ganador_max = db.session.query(ModeloResultado).filter_by(idcandidato=i).count()
@@ -119,8 +118,36 @@ class ControladorResultado():
                         'Partido Político': nombrepartido,
                         'Cantidad de votos': votos_max
                         }
-        print(ganadorcandidato)
-        print(votos_max)
+
+    def porcentajeVotospartidos(self):
+        partido = []
+        partidos = []
+        candidatos = []
+        consolidado = []
+        totalvotos = db.session.query(ModeloResultado).count()
+        resultado = db.session.query(ModeloResultado).all()
+        resultadopartidos = db.session.query(ModeloPartido).all()
+
+        for c in resultado:
+            candidatos.append(c.idcandidato)
+
+        for p in resultadopartidos:
+            partido.append(p.idpartido)
+
+        for i in candidatos:
+            partidocandidato = db.session.query(ModeloCandidato).get(i).idpartido
+            partidos.append(partidocandidato)
+
+        for par in partido:
+            nombrepartido = db.session.query(ModeloPartido).get(par).nombre
+            cantvotospartido = partidos.count(par)
+            porcentvotospartido = round(((cantvotospartido * 100)/totalvotos), 2)
+
+            consolidado.append({'Partido Político': nombrepartido,
+                'Cantidad de votos': cantvotospartido,
+                'Porcentaje(%) de votación': porcentvotospartido
+                })
+        return consolidado
 
 
 

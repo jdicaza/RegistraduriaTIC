@@ -49,3 +49,8 @@ def totalVotosCandidatos():
 def totalVotosGanador():
     json = miControladorResultado.candidatoGanador()
     return jsonify(json)
+
+@resultado.route("/reportes/votospartidos", methods=['GET'])
+def porcentajeVotospartidos():
+    json = miControladorResultado.porcentajeVotospartidos()
+    return jsonify(json)
