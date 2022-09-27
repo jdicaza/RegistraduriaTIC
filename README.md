@@ -10,18 +10,19 @@ Se implementa la coenxión a una base de datos PostgreSQL para las sigueinetes e
 - Resultados.
 
 
-##Cambios para el Sprint 2 (24-sept-2022):
+## Cambios para el Sprint 2 (24-sept-2022):
 
 Se realiza la implementación del módulo de reportes, permitiendo obtener:
 1. Conteo Global de todos los votos en las elecciones.
 2. Conteo individual de votos por candidato con su partido.
 3. Conteo general de votos agrupando a todos los candidatos con sus partido.
 4. Conteo de votos del candidato ganador.
+5. Conteo de votos y porcentaje de votación por partidos
 
 Se agrega la colección Postman en el directorio raiz (REGISTRADURIA TIC.postman_collection)
 
 
-##Tecnologías
+## Tecnologías
 Las siguienets son las tecnologías utilizadas durante el desarrollo:
 - Python 3.10
 - PostgreSQL
@@ -29,7 +30,7 @@ Las siguienets son las tecnologías utilizadas durante el desarrollo:
 - SQLAlchemy 1.4
 - Waitress 2.1.2
 
-##Colaboradores:
+## Colaboradores:
 
 * Juan David Picaza Rodelo
 * Johan Sebastian Contreras Ariza
